@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Management System
 
-## Getting Started
+A modern task scheduling system built with Next.js 14, Server Actions, and PostgreSQL. The system provides a robust interface for managing scheduled tasks with various recurrence patterns.
 
-First, run the development server:
+> **Note:** This implementation uses a traditional approach to form handling and data synchronization. While React 19 introduces powerful features like `useFormState` for form submissions to work with `revalidatePath`in Next.js for data synchronization, these features are not utilized in this version. Manual page refresh may be required to see the most recent data updates. Future iterations will incorporate these modern React features for enhanced user experience.
 
+## Installaction
+Install packages
+```bash
+pnpm i
+```
+Run a dev server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Task Management
+- ✨ Create, read, update, and delete tasks (CRUD operations)
+- 🗑️ Soft deletion for data preservation
+- ✅ Input validation with Zod
+- 📝 Task names up to 250 characters
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Scheduling Options
+- 📅 Multiple schedule types:
+  - Daily (fixed time)
+  - Hourly (every N hours at X minutes)
+  - Weekly (specific day and time)
+  - Monthly (specific date and time)
+  - Custom (using Cron expressions)
+- ⏰ Automatic next run time calculation
+- 🌍 Both UTC and local time display
 
-## Learn More
+### User Interface
+- 📱 Responsive design with Tailwind CSS
+- 📊 Server-side pagination
+- 🔄 Dynamic page size adjustment (5/10/20 items)
+- ✔️ Confirmation dialogs for destructive actions
+- ⚡ Optimistic updates for better UX
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend
+- Next.js 14
+- React with TypeScript
+- Tailwind CSS
+- shadcn/ui components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Backend
+- React Server Actions
+- Prisma ORM
+- PostgreSQL
+- Zod validation
